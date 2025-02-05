@@ -1,5 +1,5 @@
-# Front-end_aula01
-Exercícios de Lógica de Programação em Javascript e HTML na interface.
+
+## Exercícios de Lógica de Programação em Javascript e estilização da interface com HTML e CSS.
 
 ## 💻 Tecnologias Utilizadas
 
