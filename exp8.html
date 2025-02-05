@@ -24,6 +24,7 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+        padding-top: 80px;
       }
 
       .container {
@@ -44,6 +45,31 @@
         margin-bottom: 20px;
         border-bottom: solid 5px #333;
         padding-bottom: 10px;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgb(255, 198, 0);
+        padding: 10px 0;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      header a {
+        text-decoration: none;
+        color: white;
+        background-color: #555;
+        padding: 8px 12px;
+        margin: 5px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+
+      header a:hover {
+        background-color: #777;
       }
 
       input {
@@ -82,7 +108,7 @@
 
       .marca-dagua {
         position: absolute;
-        bottom: 170px;
+        bottom: 138px;
         left: 50%;
         transform: translateX(-50%);
         font-weight: bold;
@@ -95,6 +121,17 @@
     </style>
   </head>
   <body>
+    <header>
+      <a href="index.html">🏠 Página Principal</a>
+      <a href="exp1.html">Exercício 1</a>
+      <a href="exp2.html">Exercício 2</a>
+      <a href="exp3.html">Exercício 3</a>
+      <a href="exp4.html">Exercício 4</a>
+      <a href="exp5.html">Exercício 5</a>
+      <a href="exp6.html">Exercício 6</a>
+      <a href="exp7.html">Exercício 7</a>
+      <a href="exp9.html">Exercício 9</a>
+    </header>
     <div class="container">
       <h1>Situação do Aluno</h1>
       <input
