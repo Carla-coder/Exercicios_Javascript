@@ -9,7 +9,7 @@
 
 - **JavaScript**: Manipulação do DOM e lógica de programação.
 
-- Tela Incial
+- Tela Inicial
 
 ![tela inicial](https://github.com/user-attachments/assets/6ce9f8c8-0916-4548-bdca-08b6166e51f6)
 
