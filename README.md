@@ -9,9 +9,15 @@
 
 - **JavaScript**: Manipulação do DOM e lógica de programação.
 
+- Tela Incial
+
+![tela inicial](https://github.com/user-attachments/assets/6ce9f8c8-0916-4548-bdca-08b6166e51f6)
+
 ## 📝 Exercícios Implementados
 
 ### 1️⃣ Cálculo de Desconto do INSS
+
+![exp1](https://github.com/user-attachments/assets/633b253f-0df6-42f2-9dd5-9eaaed1a93e3)
 
 - O programa solicita o salário do usuário e aplica as alíquotas do INSS para calcular o desconto correspondente.
 
@@ -19,11 +25,15 @@
 
 ### 2️⃣ Classificação de Triângulos
 
+![exp2](https://github.com/user-attachments/assets/68746df5-313a-4780-a736-660c215e8016)
+
 - O usuário informa os comprimentos de três lados.
 
 - O programa verifica se é um triângulo e, se for, classifica como equilátero, isósceles ou escaleno.
 
 ### 3️⃣ Reajuste de Preço
+
+![exp3](https://github.com/user-attachments/assets/8df38067-f261-4b82-9011-a13fbcf90862)
 
 - O usuário insere o preço de um produto e a porcentagem de reajuste.
 
@@ -31,11 +41,15 @@
 
 ### 4️⃣ Maior Número
 
+![exp4](https://github.com/user-attachments/assets/1f07ae48-c78e-4105-af4d-ab90e3fdf7fe)
+
 - O usuário digita dois números.
 
 - O programa compara os valores e informa qual é o maior.
 
 ### 5️⃣ Ordenar Números
+
+![exp5](https://github.com/user-attachments/assets/899bedf3-3749-42e8-8292-08aceca10c74)
 
 - O usuário insere três números distintos.
 
@@ -43,9 +57,13 @@
 
 ### 6️⃣ Maior e Menor Número
 
+![exp6](https://github.com/user-attachments/assets/596aecf6-9e41-4636-85d1-89ca810f4626)
+
 - O programa recebe três números e determina qual é o maior e qual é o menor.
 
 ### 7️⃣ Reajuste Salarial
+
+![exp7](https://github.com/user-attachments/assets/d59fe0bb-c2b8-45e0-a9cf-948c9d9bfef8)
 
 - O usuário insere seu salário atual.
 
@@ -53,11 +71,15 @@
 
 ### 8️⃣ Situação do Aluno
 
+![exp8](https://github.com/user-attachments/assets/1677ca27-4e57-4fcc-b0ff-0767e4a79b9f)
+
 - O usuário informa três notas.
 
 - O programa calcula a média e determina se o aluno está aprovado, em recuperação ou reprovado.
 
 ### 9️⃣ Desconto na Venda 
+
+![exp9](https://github.com/user-attachments/assets/b8070cea-17af-4686-bcaa-c570d2fa0ce2)
 
 - O usuário escolhe um produto e insere seu preço.
 
