@@ -9,9 +9,15 @@
 
 - **JavaScript**: Manipulação do DOM e lógica de programação.
 
-- Tela Inicial
+- Tela Inicial (Primeira Versão)
 
 ![tela inicial](https://github.com/user-attachments/assets/6ce9f8c8-0916-4548-bdca-08b6166e51f6)
+
+- Tela Inicial (Versão Atualizada)
+
+![tela 1](https://github.com/user-attachments/assets/9d2b297c-dce8-4d9f-abb8-e3ed5108d078)
+
+![tela 2](https://github.com/user-attachments/assets/4f4fdd83-70d6-4620-b71e-f3eac9a7f058)
 
 ## 📝 Exercícios Implementados
 
@@ -95,6 +101,8 @@
 
 ### 🔟 Cálculo de Desconto
 
+![exp10](https://github.com/user-attachments/assets/e91fa392-0352-464b-b775-5cddfff5e02b)
+
 - O usuário insere o preço do produto.
 
 - O sistema verifica se o preço é superior a 1000 reais.
@@ -104,6 +112,8 @@
 - O programa exibe o valor do desconto e o preço final após o desconto.
 
 ### 1️⃣1️⃣ Salário Família
+
+![exp11](https://github.com/user-attachments/assets/8bfffdcb-edb4-4539-a56d-d8b551f06dc9)
 
 - O usuário insere seu salário e o número de filhos.
 
