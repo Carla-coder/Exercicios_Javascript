@@ -93,6 +93,30 @@
 
 - Exibe o valor do desconto e o preço final do produto.
 
+### 🔟 Cálculo de Desconto
+
+- O usuário insere o preço do produto.
+
+- O sistema verifica se o preço é superior a 1000 reais.
+
+- Se o preço for superior a 1000 reais, aplica-se um desconto de 8% sobre o valor.
+
+- O programa exibe o valor do desconto e o preço final após o desconto.
+
+### 1️⃣1️⃣ Salário Família
+
+- O usuário insere seu salário e o número de filhos.
+
+- Se o salário for inferior a R$ 2000,00, o sistema calcula o benefício de R$ 45 por filho.
+
+- O sistema exibe:
+
+  - O salário base do usuário.
+
+  - O benefício por filhos.
+
+  - O salário final, que é a soma do salário base com o benefício.
+
 ## 👩‍💻 Autor
 
 Carla Coder – Desenvolvedora Full Stack, apaixonada por criação de aplicações interativas. Conecte-se comigo no https://www.github.com/Carla-coder e https://www.linkedin.com/in/carlamozena/

@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercícios Frontend</title>
+    <title>Lista de Exercícios Frontend</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
@@ -15,92 +17,213 @@
 
       body {
         font-family: "Roboto Mono", monospace;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f4f4f4;
         background-image: url("image/binarycode.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding-top: 20px;
       }
 
-      .container {
-        background-color: rgb(255, 198, 0);
-        color: #000;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        max-width: 400px;
+        background-color: #000;
+        padding: 10px 0;
         text-align: center;
-        position: relative;
+        z-index: 1000;
       }
 
       h1 {
+        color: #fff;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
+        padding: 70px 20px 20px; /* Espaço superior para não ficar colado no header */
+        width: 90%;
+        max-width: 1200px;
+      }
+
+      .card {
+        background-color: rgb(255, 198, 0);
         color: #000;
-        font-size: 2rem;
-        border-bottom: solid 5px black;
-        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease;
       }
 
-      ul {
-        list-style: none;
-        padding: 0;
+      .card:hover {
+        transform: scale(1.05);
       }
 
-      li {
-        margin: 10px 0;
+      .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
       }
 
-      a {
+      .card-content {
+        padding: 15px;
+      }
+
+      .card h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .btn {
         text-decoration: none;
+        display: inline-block;
         padding: 10px 15px;
         background-color: #333;
         color: #fff;
         border-radius: 5px;
-        display: inline-block;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 10px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
       }
 
-      a:hover {
+      .btn:hover {
         background-color: #555;
       }
 
       .marca-dagua {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: rgba(0, 0, 0, 0.8);
-        font-size: 0.8rem;
+        margin-top: 20px;
+        text-align: center;
+        color: #000;
+        font-size: 0.9rem;
         font-weight: bold;
         font-style: normal;
-        text-align: center;
-        opacity: 1;
+      }
+
+      /* Responsividade: ajusta para telas menores */
+      @media (max-width: 1024px) {
+        .container {
+          grid-template-columns: repeat(
+            3,
+            1fr
+          ); /* Três colunas em telas médias */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          grid-template-columns: repeat(1, 1fr); /* Uma coluna em celulares */
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Lista de Exercícios Frontend</h1>
-      <ul>
-        <li><a href="exp1.html">Exercício 1</a></li>
-        <li><a href="exp2.html">Exercício 2</a></li>
-        <li><a href="exp3.html">Exercício 3</a></li>
-        <li><a href="exp4.html">Exercício 4</a></li>
-        <li><a href="exp5.html">Exercício 5</a></li>
-        <li><a href="exp6.html">Exercício 6</a></li>
-        <li><a href="exp7.html">Exercício 7</a></li>
-        <li><a href="exp8.html">Exercício 8</a></li>
-        <li><a href="exp9.html">Exercício 9</a></li>
-      </ul>
+    <header>
+      <h1>Exercícios Frontend</h1>
+    </header>
 
-      <div class="marca-dagua">Desenvolvido por Carla Coder 2025</div>
+    <div class="container">
+      <div class="card">
+        <img src="Print das Telas/exp1.jpg" alt="Exercício 1" />
+        <div class="card-content">
+          <h2>Cálculo do INSS</h2>
+          <a href="exp1.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp2.jpg" alt="Exercício 2" />
+        <div class="card-content">
+          <h2>Classificação de Triângulos</h2>
+          <a href="exp2.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp3.jpg" alt="Exercício 3" />
+        <div class="card-content">
+          <h2>Reajuste de Preço</h2>
+          <a href="exp3.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp4.jpg" alt="Exercício 4" />
+        <div class="card-content">
+          <h2>Maior Número</h2>
+          <a href="exp4.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp5.jpg" alt="Exercício 5" />
+        <div class="card-content">
+          <h2>Ordenar Números</h2>
+          <a href="exp5.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp6.jpg" alt="Exercício 6" />
+        <div class="card-content">
+          <h2>Maior e Menor Número</h2>
+          <a href="exp6.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp7.jpg" alt="Exercício 7" />
+        <div class="card-content">
+          <h2>Reajuste Salarial</h2>
+          <a href="exp7.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp8.jpg" alt="Exercício 8" />
+        <div class="card-content">
+          <h2>Situação do Aluno</h2>
+          <a href="exp8.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp9.jpg" alt="Exercício 9" />
+        <div class="card-content">
+          <h2>Desconto na Venda</h2>
+          <a href="exp9.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp10.jpg" alt="Exercício 10" />
+        <div class="card-content">
+          <h2>Cálculo de Desconto</h2>
+          <a href="exp10.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="Print das Telas/exp11.jpg" alt="Exercício 11" />
+        <div class="card-content">
+          <h2>Salário Família</h2>
+          <a href="exp11.html" class="btn">Acessar Exercício</a>
+        </div>
+      </div>
     </div>
+
+    <div class="marca-dagua">Desenvolvido por Carla Coder 2025</div>
   </body>
 </html>

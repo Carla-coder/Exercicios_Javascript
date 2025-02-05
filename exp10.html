@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reajuste de Preço</title>
+    <title>Cálculo de Desconto</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
@@ -15,13 +15,12 @@
 
       body {
         font-family: "Roboto Mono", monospace;
-        background-color: #f4f4f4;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         margin: 0;
-        background-image: url("image/popart.jpg");
+        background-image: url("image/desconto.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -31,18 +30,17 @@
       .container {
         background-color: #ffc600;
         color: #000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
         padding: 2rem;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
         width: 100%;
-        max-width: 500px;
+        max-width: 400px;
         text-align: center;
         position: relative;
       }
 
       h1 {
-        color: #000;
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 20px;
         border-bottom: solid 5px #333;
         padding-bottom: 10px;
@@ -53,7 +51,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #000;
+        background-color: rgb(255, 198, 0);
         padding: 10px 0;
         text-align: center;
         z-index: 1000;
@@ -75,23 +73,24 @@
 
       input {
         padding: 10px;
-        margin: 10px;
+        width: 100%;
+        margin: 10px 0;
         border: none;
         outline: 0;
         border-radius: 5px;
-        width: 80%;
         text-align: center;
-        font: bold 1rem serif;
+        font-size: 1rem;
       }
 
       button {
-        padding: 10px 15px;
+        padding: 10px;
         border: none;
         border-radius: 5px;
         background-color: #333;
         color: #fff;
         cursor: pointer;
-        width: 80%;
+        font-size: 1rem;
+        width: 100%;
         margin-top: 10px;
         transition: background-color 0.3s ease;
       }
@@ -101,79 +100,70 @@
       }
 
       p {
-        margin-top: 20px;
-        color: #333;
+        margin-top: 15px;
         font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
       }
 
       .marca-dagua {
         position: absolute;
-        bottom: -40px;
+        bottom: 200px;
         left: 50%;
         transform: translateX(-50%);
         font-size: 0.8rem;
-        color: rgba(0, 0, 0, 0.9);
         font-weight: bold;
         font-style: normal;
         text-align: center;
+        color: #000;
         opacity: 1;
       }
     </style>
   </head>
   <body>
     <header>
-      <a href="index.html">🏠 Página Principal</a>
-      <a href="exp1.html">Exercício 1</a>
-      <a href="exp2.html">Exercício 2</a>
-      <a href="exp4.html">Exercício 4</a>
-      <a href="exp5.html">Exercício 5</a>
-      <a href="exp6.html">Exercício 6</a>
-      <a href="exp7.html">Exercício 7</a>
-      <a href="exp8.html">Exercício 8</a>
-      <a href="exp9.html">Exercício 9</a>
-      <a href="exp10.html">Exercício 10</a>
-      <a href="exp11.html">Exercício 11</a>
-    </header>
+        <a href="index.html">🏠 Página Principal</a>
+        <a href="exp1.html">Exercício 1</a>
+        <a href="exp2.html">Exercício 2</a>
+        <a href="exp3.html">Exercício 3</a>
+        <a href="exp4.html">Exercício 4</a>
+        <a href="exp5.html">Exercício 5</a>
+        <a href="exp6.html">Exercício 6</a>
+        <a href="exp7.html">Exercício 7</a>
+        <a href="exp9.html">Exercício 9</a>
+        <a href="exp11.html">Exercício 11</a>
+      </header>
     <div class="container">
-      <h1>Reajuste de Preço</h1>
-      <input type="text" id="nome" placeholder="Nome da Mercadoria" />
-      <input type="number" id="preco" placeholder="Preço" />
-      <button onclick="calcularReajuste()">Calcular Novo Preço</button>
-      <button onclick="resetarCampos()">Novo Cálculo</button>
+      <h1>Cálculo de Desconto</h1>
+      <input type="number" id="preco" placeholder="Digite o preço do produto" />
+      <button onclick="reajustar()">Calcular Desconto</button>
+      <button onclick="novoCalculo()">Novo Cálculo</button>
       <p id="resultado"></p>
-
-      <div class="marca-dagua">Desenvolvido por Carla Coder 2025</div>
     </div>
 
+    <div class="marca-dagua">Desenvolvido por Carla Coder 2025</div>
+
     <script>
-      function calcularReajuste() {
-        let nome = document.getElementById("nome").value.trim();
+      function reajustar() {
         let preco = Number(document.getElementById("preco").value);
         let resultado = document.getElementById("resultado");
-        let aumento = 0;
 
-        if (nome === "" || preco <= 0) {
-          resultado.innerHTML =
-            "Por favor, insira um nome válido e um preço maior que zero!";
+        if (isNaN(preco) || preco <= 0) {
+          resultado.innerHTML = "Por favor, insira um preço válido!";
           return;
         }
 
-        if (preco < 1000) {
-          aumento = preco * 0.05;
-        } else {
-          aumento = preco * 0.07;
-        }
+        let desconto = preco > 1000 ? preco * 0.08 : 0;
+        let precoComDesconto = preco - desconto;
 
-        let novoPreco = preco + aumento;
-        resultado.innerHTML = `Mercadoria: ${nome} <br> Novo preço: R$ ${novoPreco.toFixed(
+        resultado.innerHTML = `Desconto de R$ ${desconto.toFixed(
           2
-        )}`;
+        )} <br> Preço final: R$ ${precoComDesconto.toFixed(2)}`;
       }
 
-      function resetarCampos() {
-        document.getElementById("nome").value = "";
-        document.getElementById("preco").value = "";
-        document.getElementById("resultado").innerHTML = "";
+      function novoCalculo() {
+        document.getElementById("preco").value = ""; 
+        document.getElementById("resultado").innerHTML = ""; 
       }
     </script>
   </body>

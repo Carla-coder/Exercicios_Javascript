@@ -1,6 +1,6 @@
 # Exercícios de revisão em Javascript
 
-- Na raiz da pasta local crie um arquivo 'index.html' com um menú que aponte para cada exercício.
+- Na raiz da pasta local crie um arquivo 'index.html' com um menu que aponte para cada exercício.
 
 1- Desenvolva uma UI(interface) Web que calcule desconto de INSS de um funcionário, se o salário for menor ou igual a 1212,00 reais 
 será de 7,5%, se estiver entre 1212,01 e 2427,35 será de 9%, se estiver entre 2427,36 e R$ 3641,03 o desconto é 12%, se estiver 
@@ -30,3 +30,9 @@ de 5% no preço da mercadoria, senão o aumento será de 7%. Mostrar o nome da m
 
 9- Uma loja está fazendo uma promoção e precisa de ajuda no momento da venda, para liberar os descontos. Baseado na peça, calcule 
 o desconto e exiba o valor final da venda. (camisa - 20% de desconto, bermuda - 10% de desconto, calça - 15% de desconto).
+
+10- Desenvolva uma UI(interface) Web que leia o preço de um produto e se o preço for maior do que 1000 reais aplique um desconto de 8%. 
+Mostre o preço final.
+
+11- Desenvolva uma UI(interface) Web que leia o salário de um funcionário e o número de filhos. Se o salário for menor do que 2000 o 
+funcionário receberá um salário família equivalente a 45 reais por filho. Apresente o salário final.
