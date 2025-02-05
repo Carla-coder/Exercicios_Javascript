@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordenar Números</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto Mono", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("image/numbersgrey.jpg"); 
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+      }
+
+      .container {
+        background-color: #ffc600; 
+        color: #000;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        position: relative;
+      }
+
+      h1 {
+        color: #000;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        border-bottom: solid 5px #333;
+        padding-bottom: 10px;
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        outline: 0;
+        border-radius: 5px;
+        width: 80%;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        width: 80%;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+
+      p {
+        margin-top: 20px;
+        color: #333;
+        font-size: 1.2rem;
+      }
+
+      .marca-dagua {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: #000;
+        font-style: normal;
+        font-weight: bold;
+        text-align: center;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Ordenar Números</h1>
+        <input type="number" id="num1" placeholder="N1">
+        <input type="number" id="num2" placeholder="N2">
+        <input type="number" id="num3" placeholder="N3">
+        <input type="number" id="num4" placeholder="N4">
+        <input type="number" id="num5" placeholder="N5">
+        <br>
+        <button onclick="ordenarNumeros()">Ordenar</button>
+        <button onclick="iniciarNovamente()">Iniciar Novamente</button>
+        <p id="resultado"></p>
+
+        <div class="marca-dagua">
+            Desenvolvido por Carla Coder 2025
+        </div>
+    </div>
+
+    <script>
+        function ordenarNumeros() {
+            let numeros = [
+                Number(document.getElementById('num1').value),
+                Number(document.getElementById('num2').value),
+                Number(document.getElementById('num3').value),
+                Number(document.getElementById('num4').value),
+                Number(document.getElementById('num5').value)
+            ];
+            
+            if (numeros.some(isNaN)) {
+                document.getElementById('resultado').innerHTML = "Por favor, insira todos os números!";
+                return;
+            }
+
+            numeros.sort((a, b) => a - b);
+            document.getElementById('resultado').innerHTML = `Números em ordem crescente: ${numeros.join(', ')}`;
+        }
+
+        function iniciarNovamente() {
+            // Limpa os campos de entrada e o resultado
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('num3').value = '';
+            document.getElementById('num4').value = '';
+            document.getElementById('num5').value = '';
+            document.getElementById('resultado').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

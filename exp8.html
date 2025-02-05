@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Situação do Aluno</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto Mono", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("image/lapis.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .container {
+        background-color: #ffc600;
+        color: #000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        position: relative;
+      }
+
+      h1 {
+        color: #000;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        border-bottom: solid 5px #333;
+        padding-bottom: 10px;
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        outline: 0;
+        border-radius: 5px;
+        width: 80%;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+        width: 80%;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+
+      p {
+        margin-top: 20px;
+        color: #333;
+        font-size: 1.2rem;
+      }
+
+      .marca-dagua {
+        position: absolute;
+        bottom: 170px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        font-size: 0.8rem;
+        font-style: normal;
+        text-align: center;
+        color: #000;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Situação do Aluno</h1>
+      <input
+        type="number"
+        id="nota1"
+        placeholder="Nota 1"
+        min="0"
+        max="10"
+        step="0.1"
+      />
+      <input
+        type="number"
+        id="nota2"
+        placeholder="Nota 2"
+        min="0"
+        max="10"
+        step="0.1"
+      />
+      <input
+        type="number"
+        id="nota3"
+        placeholder="Nota 3"
+        min="0"
+        max="10"
+        step="0.1"
+      />
+      <br />
+      <button onclick="calcularMedia()">Verificar Situação</button>
+      <button onclick="limparCampos()">Verificar Novamente</button>
+      <p id="resultado"></p>
+    </div>
+
+    <div class="marca-dagua">Desenvolvido por Carla Coder 2025</div>
+
+    <script>
+      function calcularMedia() {
+        let nota1 = Number(document.getElementById("nota1").value);
+        let nota2 = Number(document.getElementById("nota2").value);
+        let nota3 = Number(document.getElementById("nota3").value);
+        let resultado = document.getElementById("resultado");
+
+        if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+          resultado.innerHTML =
+            "Por favor, insira todas as notas corretamente!";
+          return;
+        }
+
+        if (
+          nota1 < 0 ||
+          nota1 > 10 ||
+          nota2 < 0 ||
+          nota2 > 10 ||
+          nota3 < 0 ||
+          nota3 > 10
+        ) {
+          resultado.innerHTML = "As notas devem estar entre 0 e 10!";
+          return;
+        }
+
+        let media = (nota1 + nota2 + nota3) / 3;
+        let situacao = "";
+
+        if (media >= 6) {
+          situacao = "APROVADO ✅";
+          resultado.style.color = "green";
+        } else if (media >= 4) {
+          situacao = "RECUPERAÇÃO ⚠️";
+          resultado.style.color = "#d36b00";
+        } else {
+          situacao = "REPROVADO ❌";
+          resultado.style.color = "red";
+        }
+
+        resultado.innerHTML = `Média: ${media.toFixed(
+          2
+        )} <br> Situação: ${situacao}`;
+      }
+      function limparCampos() {
+        document.getElementById("nota1").value = "";
+        document.getElementById("nota2").value = "";
+        document.getElementById("nota3").value = "";
+        document.getElementById("resultado").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

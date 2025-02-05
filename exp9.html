@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promoção da Loja</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto Mono", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("image/shopping.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.5;
+        z-index: -1;
+      }
+
+      .container {
+        background-color: #ffc600;
+        color: #000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        position: relative;
+      }
+
+      h1 {
+        color: #000;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        border-bottom: solid 5px #333;
+        padding-bottom: 10px;
+      }
+
+      select,
+      input {
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        outline: 0;
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+        font-size: 1rem;
+        font: bold 1rem serif;
+      }
+
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+        width: 100%;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+
+      p {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .marca-dagua {
+        position: absolute;
+        bottom: 190px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        font-size: 0.8rem;
+        font-style: normal;
+        text-align: center;
+        color: #000;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Desconto na Venda</h1>
+      <label for="produto">Escolha o produto:</label>
+      <select id="produto">
+        <option value="camisa">Camisa</option>
+        <option value="bermuda">Bermuda</option>
+        <option value="calca">Calça</option>
+      </select>
+      <br />
+      <input
+        type="number"
+        id="preco"
+        placeholder="Preço do Produto"
+        min="0"
+        step="0.01"
+      />
+      <br />
+      <button onclick="calcularDesconto()">Calcular Preço Final</button>
+      <button onclick="calcularNovamente()">Calcular Novamente</button>
+      <p id="resultado"></p>
+    </div>
+
+    <div class="marca-dagua">Desenvolvido por Carla Coder 2025</div>
+
+    <script>
+      function calcularDesconto() {
+        let produto = document.getElementById("produto").value;
+        let preco = Number(document.getElementById("preco").value);
+        let resultado = document.getElementById("resultado");
+
+        if (isNaN(preco) || preco <= 0) {
+          resultado.innerHTML = "Por favor, insira um preço válido!";
+          return;
+        }
+
+        let desconto = 0;
+
+        if (produto === "camisa") {
+          desconto = 20;
+        } else if (produto === "bermuda") {
+          desconto = 10;
+        } else if (produto === "calca") {
+          desconto = 15;
+        }
+
+        let valorDesconto = (preco * desconto) / 100;
+        let precoFinal = preco - valorDesconto;
+
+        resultado.innerHTML = `Desconto de ${desconto}% <br>
+                                   Valor do Desconto: R$ ${valorDesconto.toFixed(
+                                     2
+                                   )} <br>
+                                   Preço Final: R$ ${precoFinal.toFixed(2)}`;
+      }
+
+      function calcularNovamente() {
+        document.getElementById("preco").value = "";
+        document.getElementById("resultado").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

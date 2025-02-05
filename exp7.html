@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reajuste Salarial</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto Mono", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("image/money.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.5;
+        z-index: -1;
+      }
+
+      h1 {
+        color: #000;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        border-bottom: solid 5px #333;
+        padding-bottom: 10px;
+      }
+
+      .container {
+        background-color: #ffc600;
+        color: #000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        position: relative;
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        outline: 0;
+        border-radius: 5px;
+        width: 80%;
+        font-size: 1rem;
+        text-align: center;
+        font: bold 1rem serif;
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+        width: 80%;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+
+      p {
+        margin-top: 20px;
+        color: #333;
+        font-size: 1.2rem;
+      }
+
+      .marca-dagua {
+        position: absolute;
+        bottom: 215px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: #000;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+        opacity: 1;
+      }
+
+      .resultado {
+        font-weight: bold;
+      }
+
+      .alerta {
+        color: #d9534f;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Reajuste Salarial</h1>
+      <input type="number" id="salario" placeholder="Salário Atual" min="1" />
+      <br />
+      <button onclick="calcularReajuste()">Calcular Reajuste</button>
+      <button onclick="resetarCampos()">Calcular Novamente</button>
+      <p id="resultado" class="resultado"></p>
+      <p id="alerta" class="alerta"></p>
+    </div>
+
+    <div class="marca-dagua">Desenvolvido por Carla Coder 2025</div>
+
+    <script>
+      function calcularReajuste() {
+        let salario = Number(document.getElementById("salario").value);
+        let resultado = document.getElementById("resultado");
+        let alerta = document.getElementById("alerta");
+        let aumento = 0;
+
+        alerta.innerHTML = ""; // Limpar qualquer alerta anterior
+
+        if (isNaN(salario) || salario <= 0) {
+          alerta.innerHTML = "Por favor, insira um salário válido!";
+          return;
+        }
+
+        if (salario >= 1500 && salario < 1750) {
+          aumento = 15;
+        } else if (salario >= 1750 && salario < 2000) {
+          aumento = 12;
+        } else if (salario >= 2000 && salario < 3000) {
+          aumento = 9;
+        } else if (salario >= 3000) {
+          aumento = 6;
+        } else {
+          alerta.innerHTML =
+            "O salário não se encaixa nos critérios de reajuste.";
+          return;
+        }
+
+        let valorAumento = (salario * aumento) / 100;
+        let novoSalario = salario + valorAumento;
+
+        resultado.innerHTML = `Reajuste de ${aumento}% <br>
+                                   Aumento de R$ ${valorAumento.toFixed(2)} <br>
+                                   Novo Salário: R$ ${novoSalario.toFixed(2)}`;
+      }
+      function resetarCampos() {
+        document.getElementById("salario").value = ""; // Limpar o campo de salário
+        document.getElementById("resultado").innerHTML = ""; // Limpar o resultado
+        document.getElementById("alerta").innerHTML = ""; // Limpar alertas
+      }
+    </script>
+  </body>
+</html>
