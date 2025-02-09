@@ -49,7 +49,7 @@
 
 ![exp4](https://github.com/user-attachments/assets/1f07ae48-c78e-4105-af4d-ab90e3fdf7fe)
 
-- O usuário digita dois números.
+- O usuário digita seis números.
 
 - O programa compara os valores e informa qual é o maior.
 
@@ -57,7 +57,7 @@
 
 ![exp5](https://github.com/user-attachments/assets/899bedf3-3749-42e8-8292-08aceca10c74)
 
-- O usuário insere três números distintos.
+- O usuário insere seis números distintos.
 
 - O sistema ordena os números em ordem crescente e os exibe.
 
@@ -65,7 +65,7 @@
 
 ![exp6](https://github.com/user-attachments/assets/596aecf6-9e41-4636-85d1-89ca810f4626)
 
-- O programa recebe três números e determina qual é o maior e qual é o menor.
+- O programa recebe cinco números e determina qual é o maior e qual é o menor.
 
 ### 7️⃣ Reajuste Salarial
 
