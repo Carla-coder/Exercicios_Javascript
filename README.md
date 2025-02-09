@@ -57,7 +57,7 @@
 
 ![exp5](https://github.com/user-attachments/assets/899bedf3-3749-42e8-8292-08aceca10c74)
 
-- O usuário insere seis números distintos.
+- O usuário insere cinco números distintos.
 
 - O sistema ordena os números em ordem crescente e os exibe.
 
@@ -65,7 +65,7 @@
 
 ![exp6](https://github.com/user-attachments/assets/596aecf6-9e41-4636-85d1-89ca810f4626)
 
-- O programa recebe cinco números e determina qual é o maior e qual é o menor.
+- O programa recebe dois números e determina qual é o maior e qual é o menor.
 
 ### 7️⃣ Reajuste Salarial
 
